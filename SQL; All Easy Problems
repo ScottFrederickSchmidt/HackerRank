@@ -1,4 +1,7 @@
-#From hard to easy, no point in comments these are all easy:
+
+
+SELECT city, length(city) FROM station ORDER BY length(city) ASC, city LIMIT 1;
+SELECT city, length(city) FROM station ORDER BY length(city) DESC, city LIMIT 1;
 
 SELECT COUNT(city) - COUNT (DISTINCT city) FROM station;
 SELECT DISTINCT city FROM station WHERE mod(Id,2) = 0;  #SELECT city FROM station WHERE id % 2 = 0;
