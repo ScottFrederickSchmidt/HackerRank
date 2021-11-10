@@ -1,1 +1,10 @@
+#From hard to easy, no point in comments these are all easy:
+
+SELECT COUNT(city) - COUNT (DISTINCT city) FROM station;
+SELECT DISTINCT city FROM station WHERE mod(Id,2) = 0;  #SELECT city FROM station WHERE id % 2 = 0;
+SELECT city, state FROM station;
 SELECT name FROM CITY WHERE countrycode = 'JPN';
+SELECT name FROM city WHERE population > 120000 AND COUNTRYCODE='USA';
+SELECT * FROM CITY;
+SELECT * FROM city WHERE ID=1661;
+SELECT * FROM city WHERE COUNTRYCODE = 'JPN';
