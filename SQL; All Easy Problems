@@ -1,13 +1,23 @@
 
-
+SELECT name FROM employee WHERE salary > 2000 and months < 10 ORDER BY employee_id ASC;
+SELECT name FROM students where marks>75 ORDER BY right(name, 3), ID ASC;
+SELECT DISTINCT city FROM station WHERE right(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u') AND left(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u'); 
+SELECT DISTINCT city FROM station WHERE right(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u') OR left(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u'); 
+SELECT DISTINCT city FROM station WHERE right(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u');
+SELECT DISTINCT city FROM station WHERE left(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u');
+SELECT DISTINCT city FROM station WHERE right(city, 1) IN ('a', 'e', 'i', 'o', 'u') and left(city, 1) IN ('a', 'e', 'i', 'o', 'u') ;
+SELECT DISTINCT city FROM station WHERE right(city, 1) IN ('a', 'e', 'i', 'o', 'u');
+SELECT city FROM station WHERE LEFT(city, 1) IN ('a', 'e', 'i', 'o', 'u') ; 
 SELECT city, length(city) FROM station ORDER BY length(city) ASC, city LIMIT 1;
 SELECT city, length(city) FROM station ORDER BY length(city) DESC, city LIMIT 1;
 
+SELECT * FROM city WHERE population >100000 AND CountryCode='USA';
 SELECT COUNT(city) - COUNT (DISTINCT city) FROM station;
 SELECT DISTINCT city FROM station WHERE mod(Id,2) = 0;  #SELECT city FROM station WHERE id % 2 = 0;
 SELECT city, state FROM station;
 SELECT name FROM CITY WHERE countrycode = 'JPN';
 SELECT name FROM city WHERE population > 120000 AND COUNTRYCODE='USA';
 SELECT * FROM CITY;
+SELECT name FROM employee ORDER BY name ASC; 
 SELECT * FROM city WHERE ID=1661;
 SELECT * FROM city WHERE COUNTRYCODE = 'JPN';
