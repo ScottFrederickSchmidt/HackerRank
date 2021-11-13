@@ -32,6 +32,26 @@ Explanation
 
 The results of the first query are formatted to the problem description's specifications.
 The results of the second query are ascendingly ordered first by number of names corresponding to each profession and then alphabetically by profession.
-----------------------------------------------------
+--------------------------------------------------------------------
 
-SOLUTION:
+The first step is to write combine the name and first letter of occupation using LEFT.
+Then, concat will get rid of the whitespace:
+
+SELECT concat(name, '(',left(occupation,1), ')') FROM occupations;
+
+The second part also requires using a second "SELECT" statement.
+One must GROUP the occupations together to get the count.
+
+SELECT 'There are a total of ', count(occupation), concat(lower(occupation), 's', '.' ) 
+FROM occupations
+GROUP BY occupation
+ORDER BY count(occupation), occupation ASC;
+
+
+
+
+
+
+
+
+
