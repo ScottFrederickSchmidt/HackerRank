@@ -8,6 +8,7 @@ SELECT
         ELSE 'Not A Triangle' END 
     FROM TRIANGLES
 
+SELECT count(*) FROM city WHERE population >100000;
 SELECT name FROM employee WHERE salary > 2000 and months < 10 ORDER BY employee_id ASC;
 SELECT name FROM students where marks>75 ORDER BY right(name, 3), ID ASC;
 SELECT DISTINCT city FROM station WHERE right(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u') AND left(city, 1) NOT IN ('a', 'e', 'i', 'o', 'u'); 
