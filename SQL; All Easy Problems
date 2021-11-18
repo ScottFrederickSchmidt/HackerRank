@@ -1,4 +1,4 @@
-SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0',''))) FROM EMPLOYEES;
+
 
 SELECT 
     CASE 
@@ -22,6 +22,7 @@ SELECT city FROM station WHERE LEFT(city, 1) IN ('a', 'e', 'i', 'o', 'u') ;
 SELECT city, length(city) FROM station ORDER BY length(city) ASC, city LIMIT 1;
 SELECT city, length(city) FROM station ORDER BY length(city) DESC, city LIMIT 1;
 
+SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0',''))) FROM EMPLOYEES;
 SELECT SUM(population) FROM city where countrycode='JPN';
 SELECT count(*) FROM city WHERE population >100000;
 SELECT sum(population) FROM city WHERE DISTRICT='California';
