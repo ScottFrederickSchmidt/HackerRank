@@ -1,3 +1,5 @@
+SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0',''))) FROM EMPLOYEES;
+
 SELECT 
     CASE 
         WHEN A + B > C AND A + C > B AND B + C > A THEN 
