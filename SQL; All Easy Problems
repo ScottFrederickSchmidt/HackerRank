@@ -21,6 +21,8 @@ SELECT city FROM station WHERE LEFT(city, 1) IN ('a', 'e', 'i', 'o', 'u') ;
 SELECT city, length(city) FROM station ORDER BY length(city) ASC, city LIMIT 1;
 SELECT city, length(city) FROM station ORDER BY length(city) DESC, city LIMIT 1;
 
+
+SELECT sum(population) FROM city WHERE DISTRICT='California';
 SELECT * FROM city WHERE population >100000 AND CountryCode='USA';
 SELECT COUNT(city) - COUNT (DISTINCT city) FROM station;
 SELECT DISTINCT city FROM station WHERE mod(Id,2) = 0;  #SELECT city FROM station WHERE id % 2 = 0;
