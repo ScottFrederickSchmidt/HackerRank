@@ -47,22 +47,14 @@ FROM occupations
 GROUP BY occupation
 ORDER BY count(occupation), occupation ASC;
 
---------------------------
 
 FINAL SOLUTION:
-SELECT concat(name,'(', LEFT(occupation,1), ')') FROM occupations;
-SELECT 'There are a total of ', count(occupation), concat(lower(occupation), 's')
+SELECT concat(name,'(', LEFT(occupation,1), ')') FROM occupations
+ORDER BY name ASC;
+SELECT 'There are a total of ', count(*), concat(lower(occupation), 's.')
 FROM occupations
 GROUP BY occupation
-ORDER BY count(occupation) ASC, occupation;
-
-However, this answer is slightly incorrect. It selects the wrong count:
-Christeen(S)
-Eve(A)
-Aamina(D)
-There are a total of 3 doctors
-There are a total of 4 actors
-There are a total of 4 singers
+ORDER BY count(*) ASC, occupation ASC;
 
 
 
