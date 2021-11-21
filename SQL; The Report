@@ -1,0 +1,22 @@
+https://www.hackerrank.com/challenges/the-report/problem?isFullScreen=true
+
+-------------------------
+
+#Retrieve name if grade above 8, grade, and marks:
+SELECT IF(grade<8, null, name), grade, marks
+
+#Combine the two tables:
+FROM students JOIN grades
+
+#This is the hardest line to comprehend! 
+#This will only grab data if the number is between 0 and 100 because some may not have a grade yet.
+WHERE marks BETWEEN min_mark AND max_mark
+
+#The report must be in descending order by grade, then name, finally marks:
+ORDER BY grade DESC, name, marks;
+
+#FINAL SOLUTION:
+SELECT IF(grade<8, null, name), grade, marks
+FROM students JOIN grades
+WHERE marks BETWEEN min_mark AND max_mark
+ORDER BY grade DESC, name, marks;
