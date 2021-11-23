@@ -17,6 +17,7 @@ SELECT DISTINCT city FROM station WHERE left(city, 1) NOT IN ('a', 'e', 'i', 'o'
 SELECT DISTINCT city FROM station WHERE right(city, 1) IN ('a', 'e', 'i', 'o', 'u') and left(city, 1) IN ('a', 'e', 'i', 'o', 'u') ;
 SELECT DISTINCT city FROM station WHERE right(city, 1) IN ('a', 'e', 'i', 'o', 'u');
 SELECT city FROM station WHERE LEFT(city, 1) IN ('a', 'e', 'i', 'o', 'u') ; 
+SELECT salary * months AS earnings, COUNT(*) FROM Employee GROUP BY earnings ORDER BY earnings DESC LIMIT 1;
 SELECT city, length(city) FROM station ORDER BY length(city) ASC, city LIMIT 1;
 SELECT city, length(city) FROM station ORDER BY length(city) DESC, city LIMIT 1;
 
