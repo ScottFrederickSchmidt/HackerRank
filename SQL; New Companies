@@ -36,4 +36,16 @@ There are two managers, M2 and M3, under senior manager SM3.
 There is one employee, E3, under manager M2, and another employee, E4, under manager, M3.
 ---------------------------------------------------------------------
 
+One must combine all the tables info using WHERE and AND on the codes.
+Finally, use the GROUP BY class on the company_code. 
+The tricky part becomes using DISTINCT on the count, otherwise the code will be incorrect.
+
+SELECT c.company_code, c.founder, count(distinct l.lead_manager_code), count(distinct s.senior_manager_code), count(distinct m.manager_code), count(distinct e.employee_code)
+FROM company c, lead_manager l, senior_manager s, manager m, employee e
+WHERE c.company_code=l.company_code
+AND l.lead_manager_code=s.lead_manager_code
+AND s.senior_manager_code=e.senior_manager_code
+AND m.manager_code=e.manager_code
+GROUP BY c.company_code, c.founder ORDER by c.company_code;
+
 
