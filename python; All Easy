@@ -1,3 +1,10 @@
+if __name__ == '__main__':
+    n = int(input())
+    final=''
+    for i in range(n+1):
+        final=final+str(i)
+    print( int(final) )
+-------------------------------
 
 import math
 import os
