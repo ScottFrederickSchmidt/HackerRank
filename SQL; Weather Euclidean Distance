@@ -3,3 +3,9 @@ and  are the respective minimummand maximum values of Western Longitude (LONG_W)
 
 Query the Euclidean Distance between points  and  and format your answer to display  decimal digits.
 -----------------------------------------------
+
+SELECT round(sqrt(
+power (min(lat_n)-min(long_w),2) + power (max(lat_n)- max(long_w),2)
+ ),4)
+FROM station;
+
