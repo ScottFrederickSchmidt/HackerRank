@@ -1,0 +1,21 @@
+https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true
+
+You are given three tables: Students, Friends and Packages. Students contains two columns: ID and Name.
+Friends contains two columns: ID and Friend_ID (ID of the ONLY best friend). 
+Packages contains two columns: ID and Salary (offered salary in $ thousands per month).
+
+-------------------------------
+1) Must select the name.
+2) JOIN friends and students table together using ID. 
+This can also be done as  FROM students s JOIN friends f using(id)
+3) Get the first person data as p1.
+4) Get the second person data (person's friend), p2
+5) Find where friends salary is greater than first person.
+
+
+SELECT s.name
+FROM students s JOIN friends f on s.id=f.id
+JOIN packages p1 on s.id=p1.id
+JOIN packages p2 on friend_id=p2.id
+WHERE p2.salary>p1.salary
+ORDER BY p2.salary;
