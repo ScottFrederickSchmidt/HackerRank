@@ -23,3 +23,8 @@ if __name__ == '__main__':
           print("Weird")
       else:
           print("Not Weird")
+
+if __name__ == '__main__':
+    n = int(input())
+    for n in range(n):
+        print(n*n)
