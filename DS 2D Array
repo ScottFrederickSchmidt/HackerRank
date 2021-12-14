@@ -1,0 +1,43 @@
+'''
+https://www.hackerrank.com/challenges/2d-array/problem?isFullScreen=true
+To concise this problem into easy instructions, one must basically find the max number "hour glass" within a 6x6 array.
+'''
+
+import math
+import os
+import random
+import re
+import sys
+
+
+# Complete the 'hourglassSum' function below.
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+
+def hourglassSum(arr):
+    pass
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    #result = hourglassSum(arr)
+    max_num=-1000
+    for i in range(4):
+        for j in range(4):
+            row1= arr[i][j:j+4]
+            print(row1)
+            row2= arr[i+1][j+1]
+            row3= arr[i+2][j:j+4]
+            total=sum(row1+row2+row3)
+            print(total)
+            if total>max_num:
+                max_num=total
+    print(max_num)
+    fptr.write(str(max_num) + '\n')
+
+    fptr.close()
