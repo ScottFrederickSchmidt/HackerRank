@@ -1,0 +1,22 @@
+https://www.hackerrank.com/challenges/nested-list/problem?isFullScreen=true
+Nested List: In short summary, print the names of the names of the people with the second lowest score.
+
+---------------------
+
+if __name__ == '__main__':
+    d={} # store in dictionary
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        d[name]=score
+    v=d.values()
+    num2=sorted(list(set(v)))[1] #find second lowest value
+    names=[]
+    for key,value in d.items():
+        if value==num2:  # if person has second lowest score,
+            names.append(key)  #store the name
+    names.sort() #sort by name (key).
+    for n in names:
+        print(n) 
+        
+      
