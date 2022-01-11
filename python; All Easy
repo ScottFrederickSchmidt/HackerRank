@@ -1,3 +1,18 @@
+# Find the percentage:
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    #print(query_name)
+    grades=student_marks[query_name]
+    grade=(sum(grades)/len(grades))
+    print("%.2f" % grade)
+    #print( round(grade,2))
+----------------------
 #Write a function:
 def is_leap(year):
     leap=False
